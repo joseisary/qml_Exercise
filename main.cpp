@@ -3,14 +3,14 @@
 #include <QQmlContext>
 #include "iobattery.h"
 
-int main(int argc, char *argv[])
-{
+static void registerTypes();
+static void registerByContext(QQmlApplicationEngine &engine, IOBattery &battery);
+
+int main(int argc, char *argv[]) {
 
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
-
-    IOBattery battery;
-    engine.rootContext()->setContextProperty("ioBattery", &battery);
+    registerTypes();
 
     QObject::connect(
         &engine,
@@ -21,4 +21,12 @@ int main(int argc, char *argv[])
     engine.loadFromModule("battery", "Main");
 
     return app.exec();
+}
+
+static void registerTypes() {
+    qmlRegisterType<IOBattery>("capgemini.com", 1, 0, "IOBattery");
+}
+
+static void registerByContext(QQmlApplicationEngine &engine, IOBattery &battery) {
+    engine.rootContext()->setContextProperty("ioBattery", &battery);
 }

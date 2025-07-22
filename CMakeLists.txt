@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(battery VERSION 0.1 LANGUAGES CXX)
-
+set(QT_QML_GENERATE_QMLLS_INI ON)
+set(QT_QMLLS_ENABLED ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick)
