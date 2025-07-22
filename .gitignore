@@ -1,3 +1,10 @@
+
+# specific to qml_Exercise
+build/
+.vscode/
+.gitignore
+.qmlls.ini
+
 # C++ objects and libs
 *.slo
 *.lo
