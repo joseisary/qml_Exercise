@@ -6,8 +6,8 @@ Window {
     width: 640
     height: 480
     title: "ApplicationWindow"
-    Battery_v1 {
-        id: bt
-        anchors.centerIn: parent
-    }
+    color: "#2e2e2e"
+
+    Battery_v1 { anchors.centerIn: parent }
 }
+
