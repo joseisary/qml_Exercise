@@ -1,3 +1,7 @@
+.qmlls.ini
+.vscode/
+build/
+
 # C++ objects and libs
 *.slo
 *.lo
